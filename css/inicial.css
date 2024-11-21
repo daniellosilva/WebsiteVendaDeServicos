@@ -1,0 +1,6 @@
+.section-1 {
+    max-height: 500px;
+    background-color: #CAE8F8;
+    display: flex;
+    justify-content: center;
+}
