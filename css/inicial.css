@@ -1,6 +1,27 @@
 .section-1 {
-    max-height: 500px;
+    min-height: auto;
+    max-height: 970px;
     background-color: #CAE8F8;
     display: flex;
+    height: 600px;
     justify-content: center;
+}
+section div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 50px;
+}
+section img {
+    border-radius: 60px;
+    max-height: 250px;
+}
+
+section h1{
+    color: rgb(49, 45, 45);
+}
+
+section p{
+    text-align: center;
+    font-size: 30px;
 }
