@@ -3,7 +3,7 @@
     max-height: 970px;
     background-color: #CAE8F8;
     display: flex;
-    height: 600px;
+    height: 550px;
     justify-content: center;
     align-items: center;
 }
@@ -43,4 +43,21 @@ section p{
     background-color: #449AB9;
     display: flex;
     justify-content: center;
+}
+
+.section-2 h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.section-2 div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   flex-direction: column;
+}
+
+.section-2 .posicao-servicos {
+    display: flex;
+    flex-direction: row;
 }
