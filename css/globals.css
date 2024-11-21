@@ -1,0 +1,10 @@
+:root{
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 14px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
