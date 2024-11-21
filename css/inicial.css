@@ -83,6 +83,14 @@ section h1{
     font-size: 20px;
 }
 
+.section-2 .botao-mostrar-mais {
+    width: 1500px;
+    height: 800px;
+    align-items: flex-end;
+    border-radius: 50px;
+    background-color:
+}
+
 footer {
     background-color: #449AB9;
 }
