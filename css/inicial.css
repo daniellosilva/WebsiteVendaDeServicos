@@ -65,9 +65,9 @@ section h1{
     height: 150px;
 }
 
-.section-2 div{
+
+.section-2 .posicao-servicos div{
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
@@ -75,20 +75,36 @@ section h1{
 }
 
 .section-2 .posicao-servicos {
-    display: flex;
     flex-direction: row;
 }
+
 
 .section-2 p{
     font-size: 20px;
 }
 
 .section-2 .botao-mostrar-mais {
-    width: 1500px;
-    height: 800px;
+    width: 200px;
+    justify-content: center;
     align-items: flex-end;
+    height: 800px;
     border-radius: 50px;
-    background-color:
+}
+
+.section-2 .botao-mostrar-mais a {
+    color: #FFFFFF;
+    text-decoration: none;
+    background-color: #1A4E69;
+    border-radius: 50px;
+    padding: 10px;
+}
+
+.section-2 .posicao-mostrar {
+    flex-direction: column;
+    max-height: 100px;
+    height: 100px;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 footer {
