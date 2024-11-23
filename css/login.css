@@ -31,7 +31,6 @@ section .login-form  div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    
 }
 
 section .login-form input {
@@ -40,7 +39,8 @@ section .login-form input {
     width: 340px;
     height: 40px;
     background-color: #0E3043;
-    text-align:center;
+    padding: 15px;
+    color: #ffffff;
 }
 
 section .login-form label {
@@ -54,5 +54,4 @@ section .login-form button {
     height: 30px;
     border-style: none;
     color: #063150;
-    margin: ;
 }
