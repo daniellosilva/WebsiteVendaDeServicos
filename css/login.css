@@ -4,11 +4,36 @@ section {
     align-items: center;
     height: 550px;
     background-color: #CAE8F8;
+
 }
 
-section div {
+section .login-form {
+    display: flex;
+    flex-direction: column;
     width: 400px;
     height: 350px;
     background-color: #0076B5;
     border-radius: 10px;
+    gap: 20px;
 }
+section .login-form h1{
+    display: flex;
+    justify-content: center;
+    color: #ffff;
+    margin-top: 27px;
+}
+
+section .login-form  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 450px;
+    margin-left: 30px;
+}
+
+section .login-form input {
+    border-radius: 5px;
+    width: 340px;
+    height: 30px;
+}
+
