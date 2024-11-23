@@ -2,11 +2,11 @@ section div {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+
 }
 
 section img {
-    border-radius: 60px;
+    border-radius: 40px;
     max-height: 250px;
 }
 
@@ -17,8 +17,6 @@ section h1{
 .section-1-servicos {
     display: flex;
     flex-direction: column;
-    height: 380px;
-    background-color: #CAE8F8;
 }
 
 .section-1-servicos .nossos-servicos h2 {
@@ -42,13 +40,14 @@ section h1{
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
-    gap: 20px;
+
 }
 
 .section-1-servicos .posicao-servicos {
     display: flex;
     flex-direction: row;
-
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -56,43 +55,30 @@ section h1{
     font-size: 20px;
 }
 
-.section-2-servicos {
+.section-1-servicos .posicao-servicos{
     display: flex;
     flex-direction: column;
-    height: 420px;
-    background-color: #ffffff;
 }
 
-.section-2-servicos .nossos-servicos h2 {
-    font-size: 25px;
+.section-1-servicos .posicao-servicos .linha-servicos-1{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-}
-
-.section-2-servicos h2 {
-    display: flex;
-    justify-content: center;
-    font-size: 15px;
-    height: 150px;
-}
-
-
-.section-2-servicos .posicao-servicos div{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 20px;
-}
-
-.section-2-servicos .posicao-servicos {
     flex-direction: row;
-    justify-content: space-evenly;
+    background-color: #cae8f850;
+    width: 100%;
+    height: 450px;
+    
 }
-
-
-.section-2-servicos p{
-    font-size: 20px;
+.section-1-servicos .posicao-servicos .linha-servicos-2{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    width: 100%;
+    height: 450px;
+}
+.section-1-servicos .posicao-servicos .linha-servicos-3{
+    display: flex;
+    flex-direction: row;
+    background-color: #cae8f850;
+    width: 100%;
+    height: 450px;
 }
