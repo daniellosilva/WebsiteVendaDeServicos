@@ -1,9 +1,10 @@
 section {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     background-color: #CAE8F8;
     height: 100%;
+
 }
 
 section .login-form form {
