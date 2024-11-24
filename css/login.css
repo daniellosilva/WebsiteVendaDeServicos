@@ -9,7 +9,7 @@ section {
 section .login-posicao {  
     display: flex;
     align-items: center;
-    margin-top: 100px;
+    justify-content: center;
     flex-direction: column;
 }
 
@@ -26,13 +26,12 @@ section .login-form h1 {
     display: flex;
     justify-content: center;
     color: #ffff;
-    margin-top:15px;
-
+    margin-top:25px;
 }
 
 section .login-form {
     background-color: #0076B5;
-    height: 300px;
+    height: 350px;
     border-radius: 10px;
     
 }
@@ -72,15 +71,19 @@ section .login-form button {
     color: #063150;   
 }
 
-
 section button:hover{
     color: white;
     background-color: #030516;
     color: #fff;
     border-radius: 10px;
+    transition: 0.5s;
 }
 
 .login-posicao a{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     color: #ffffff;
     text-decoration: none;
+    height: 35px;
 }
