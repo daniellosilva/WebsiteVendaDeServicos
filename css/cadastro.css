@@ -3,16 +3,11 @@
   max-width: 100%;
 }
 
-.header-cadastro a {
-  color: white;
-  background-color: ;
-}
-
 header div.container-header{
   width: 2000px;
   display: flex;
   align-items: center;
-  justify-content: space-around;   
+  justify-content: space-around;
 }
 
 header img{
