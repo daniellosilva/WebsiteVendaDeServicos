@@ -1,0 +1,78 @@
+section {
+    display: flex;
+    flex-direction: column;
+}
+section div {
+    display: flex;
+    flex-direction: row;
+}
+section p{
+    text-align: center;
+}
+section img {
+    border-radius: 100px;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    height: 100px;
+}
+
+.section-1{
+    background-color: #cae8f850;
+}
+
+.section-2{
+    background-color: #fff;
+}
+
+.section-3{
+    background-color: #cae8f850;
+}
+.section-1 div{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 300px;
+}
+.section-2 div{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 300px;
+}
+
+.section-3 div{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 300px;
+}
+
+.section-3 .texto-sobre{
+    display: flex;
+    flex-direction: column;
+}
+
+.section-1 div p {
+    font-size: 25px;
+    width: 700px;
+
+}
+.section-2 div p {
+    font-size: 22px;
+    width: 700px;
+}
+.section-3 div p {
+    font-size: 20px;
+    width: 700px;
+}
+
+#slogan {
+    font-size: 27.5px;
+    font-style: italic;
+}
