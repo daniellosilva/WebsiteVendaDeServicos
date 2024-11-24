@@ -48,6 +48,19 @@ section h1{
     justify-content: center;
 }
 
+.botao-inicio a:hover{
+    text-decoration: none;
+    padding: 15px;
+    width: 150px;
+    border-radius: 40px;
+    color: #FFFFFF;
+    background-color: #145f7a;
+    display: flex;
+    justify-content: center;
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+
 .section-2 {
     display: flex;
     flex-direction: column;
@@ -99,6 +112,16 @@ section h1{
     background-color: #1A4E69;
     border-radius: 50px;
     padding: 10px;
+}
+
+.section-2 .botao-mostrar-mais a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+    background-color: #1d7bad;
+    border-radius: 50px;
+    padding: 10px;
+    transition: 0.5s;
+    transform: scale(1.1);
 }
 
 .section-2 .posicao-mostrar {
