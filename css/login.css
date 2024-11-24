@@ -1,16 +1,16 @@
 section {
     display: flex;
     justify-content: center;
-    align-items: center;
     background-color: #184258;
     height: 100vh;
-
+    
 }
 
-section .login-posicao {
-    flex-direction: column;
+section .login-posicao {  
     display: flex;
     align-items: center;
+    margin-top: 100px;
+    flex-direction: column;
 }
 
 section .login-form form {
@@ -72,13 +72,15 @@ section .login-form button {
     color: #063150;   
 }
 
-section .login-form a {
-    text-decoration: none;
-}
 
 section button:hover{
     color: white;
     background-color: #030516;
     color: #fff;
     border-radius: 10px;
+}
+
+.login-posicao a{
+    color: #ffffff;
+    text-decoration: none;
 }
