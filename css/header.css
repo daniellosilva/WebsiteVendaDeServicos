@@ -59,6 +59,7 @@ header nav ul li a:hover{
     color: #fff;
     border-radius: 15%;
     transition: 0.8s;
+    transform: scale(0.9);
 }
 
 .login{
@@ -70,6 +71,7 @@ header nav ul li a:hover{
     color: #fff;
     width: 80px;
     height: 30px;
+    
 }
 
 .login:hover{
