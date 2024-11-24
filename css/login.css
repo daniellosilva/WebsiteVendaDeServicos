@@ -2,7 +2,6 @@ section {
     display: flex;
     justify-content: center;
     background-color: #184258;
-    height: 100vh;
 }
 
 section .login-posicao {  
