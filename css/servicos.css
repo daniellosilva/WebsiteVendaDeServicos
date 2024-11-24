@@ -40,6 +40,7 @@ section h1{
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
+    gap: 20px;
 
 }
 
@@ -58,6 +59,7 @@ section h1{
 .section-1-servicos .posicao-servicos{
     display: flex;
     flex-direction: column;
+    
 }
 
 .section-1-servicos .posicao-servicos .linha-servicos-1{
