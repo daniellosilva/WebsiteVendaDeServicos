@@ -102,3 +102,13 @@ section h1{
     padding: 20px;
 }
 
+.section-1-servicos .botao-saiba-mais a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+    background-color: #61717a;
+    border-radius: 20px;
+    padding: 20px;
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+

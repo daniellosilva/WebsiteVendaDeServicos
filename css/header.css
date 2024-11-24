@@ -70,6 +70,19 @@ header nav ul li a:hover{
     height: 30px;
 }
 
+.login:hover{
+    background-color: #03bcff;
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+    align-items: center;
+    color: #ffffff;
+    width: 80px;
+    height: 30px;
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+
 .cadastro{
     background-color: #777686;
     display: flex;
@@ -79,4 +92,17 @@ header nav ul li a:hover{
     color: #000000;
     width: 100px;
     height: 30px;
+}
+
+.cadastro:hover{
+    background-color: #474747;
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+    align-items: center;
+    color: #ffffff;
+    width: 100px;
+    height: 30px;
+    transition: 0.5s;
+    transform: scale(1.1);
 }
