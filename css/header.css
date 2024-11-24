@@ -57,6 +57,7 @@ header nav ul li a:hover{
     background-color: #1a2270;
     color: #fff;
     border-radius: 15%;
+    transition: 0.8s;
 }
 
 .login{
