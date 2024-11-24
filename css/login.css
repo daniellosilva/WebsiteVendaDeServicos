@@ -1,10 +1,14 @@
+body {
+    height: 100vh;
+    width: 100%; 
+}
+
 section {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    max-height: 100%;
     background-color: #CAE8F8;
-    height: 700px;
+    height: 100%;
 }
 
 section .login-form form {
@@ -76,4 +80,3 @@ section button:hover{
     color: #fff;
     border-radius: 10px;
 }
-
