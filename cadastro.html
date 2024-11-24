@@ -6,54 +6,48 @@
     <title>Cadastro - Midd</title>
 
     <link rel="stylesheet" href="css/cadastro.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/globals.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
-  <div class="container header-div">
-    <header>
-        <a href=""><img src="img/Marido_de_Aluguel-removebg-preview.png" alt="middo-logo"></a>
-        <nav>
-            <ul class="lado-esquerdo">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-            </ul>
-        </nav>
-        <div class="lado-direito">
-            <li><a class="login" href="login.html">Login</a></li>
-            <li><a class="cadastro" href="cadastro.html">Cadastro</a></li>
+    <header class="header-cadastro">
+        <div class="container-header">
+            <a href="index.html"><img src="img/Marido_de_Aluguel-removebg-preview.png" alt="logo-login" width="200px" height="200px"></a>
+            <a href="login.html">Login</a>
         </div>
-    </header> 
+    </header>
+  <div class="container header-div">
 </div>
-    <main class="form-container">
-        <form class="register-form">
-            <h2>Cadastro</h2>
-            <div class="form-section">
-                <label for="name">Nome</label>
-                <input type="text" id="name" name="name">
-                
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email">
-
-                <label for="cpf">CPF</label>
-                <input type="text" id="cpf" name="cpf">
-
-                <label for="password">Criar senha</label>
-                <input type="password" id="password" name="password">
-
-                <label for="confirm-password">Repetir Senha</label>
-                <input type="password" id="confirm-password" name="confirm-password">
-
-                <label for="phone">Celular</label>
-                <input type="text" id="phone" name="phone">
+    <section class="section-1">
+        <div class="cadastro-posicao">
+            
+        
+            <div class="cadastro-form">
+                <h1>Acesse sua conta</h1>
+                <form action="sobre.html" method="post">
+                    <div>
+                        <label class="FormLabel">E-mail ou usuário</label>
+                        <input type="text" class="InputText-input" placeholder="Insira o nome do seu usuário ou e-mail de acesso" required>
+                    </div>
+                    <div>
+                        <label class="FormLabel">Senha</label>
+                        <input type="password" class="InputText-input" placeholder="Insira sua senha" required>
+                    </div>
+                    <button class="botao-entrar" type="submit">Entrar</button>
+                </form>
+                <a href="cadastro.html">Ainda não tem cadastro?</a>
             </div>
+<<<<<<< HEAD
 
             <div class="form-row">
               <button type="submit" class="submit-btn">Enviar</button>
             </div>        
         </form>
     </main>
+=======
+        </div>
+    </section>
+>>>>>>> 6a50a2458ad04ef7f4fbdf277712c97e4333694b
    </body>
 </html>

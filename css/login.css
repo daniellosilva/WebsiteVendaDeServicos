@@ -3,7 +3,6 @@ section {
     justify-content: center;
     background-color: #184258;
     height: 100vh;
-    
 }
 
 section .login-posicao {  
@@ -33,7 +32,6 @@ section .login-form {
     background-color: #0076B5;
     height: 350px;
     border-radius: 10px;
-    
 }
 
 section .login-form div {
