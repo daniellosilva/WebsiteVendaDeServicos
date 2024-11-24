@@ -1,13 +1,13 @@
 .header-cadastro {
   background-color: #0076B5;
   max-width: 100%;
+  max-height: 10%;
 }
 
 header div.container-header {
   width: 2000px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
 }
 
 header img {
@@ -16,9 +16,27 @@ header img {
   align-items: flex-start;
 }
 
-header .login-botao a {
+.login-botao{
+  background-color: #449AB9;
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+  align-items: center;
+  width: 80px;
+  height: 30px;
+}
+
+header .login-botao a:hover{
+  background-color: #449AB9;
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+  align-items: center;
   color: white;
-  background-color: #030516;
+  width: 90px;
+  height: 30px;
+  transition: 0.5s;
+  transform: scale(1.1);
 }
 
 section {
@@ -26,6 +44,7 @@ section {
   justify-content: center;
   background-color: #184258;
   height: 100vh;
+
 }
 
 section .cadastro-posicao {  
@@ -33,6 +52,7 @@ section .cadastro-posicao {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  height: 100%;
 }
 
 section .cadastro-form form {
@@ -41,14 +61,26 @@ section .cadastro-form form {
   flex-direction: column;
   width: 400px;
   border-radius: 10px;
-  gap: 20px;
+  gap: 5px;
 }
 
-section .cadastro-form h1 {
+section .cadastro-posicao h2 {
   display: flex;
   justify-content: center;
   color: #ffff;
   margin-top:25px;
+
+}
+
+section .cadastro-posicao span {
+  color: #ffffff;
+  padding: 30px;
+}
+
+section .cadastro-posicao h2 strong{
+  display: flex;
+  margin-left: 5px;
+  color: rgb(123, 197, 247);
 }
 
 section .cadastro-form {
@@ -89,7 +121,8 @@ section .cadastro-form button {
   width: 250px;
   height: 30px;
   border-style: none;
-  color: #063150;   
+  color: #063150; 
+  margin-top: 20px;
 }
 
 section button:hover{
@@ -98,13 +131,4 @@ section button:hover{
   color: #fff;
   border-radius: 10px;
   transition: 0.5s;
-}
-
-.cadastro-posicao a {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  color: #ffffff;
-  text-decoration: none;
-  height: 35px;
 }
