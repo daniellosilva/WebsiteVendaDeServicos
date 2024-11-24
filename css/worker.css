@@ -61,7 +61,6 @@ section div{
     transform: scale(1.1);
 }
 .section-1-worker .worker-box{
-    margin-top: -400px;
     background-color: #449ab92d;
     width: 1200px;
     border-radius: 20px;

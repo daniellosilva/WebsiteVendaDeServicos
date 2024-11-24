@@ -2,9 +2,15 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #CAE8F8;
-    height: 100%;
+    background-color: #184258;
+    height: 100vh;
 
+}
+
+section .login-posicao {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
 }
 
 section .login-form form {
@@ -12,29 +18,29 @@ section .login-form form {
     align-items: center;
     flex-direction: column;
     width: 400px;
-    height: 290px;
     border-radius: 10px;
     gap: 20px;
-    margin-top: 10px;
 }
 
 section .login-form h1 {
     display: flex;
     justify-content: center;
     color: #ffff;
-    margin-top: 27px;
+    margin-top:15px;
+
 }
 
 section .login-form {
-    margin-top: 100px;
     background-color: #0076B5;
     height: 300px;
     border-radius: 10px;
+    
 }
 
 section .login-form div {
     display: flex;
     flex-direction: column;
+    margin-top: 18px;
 }
 
 section .login-form div form {
