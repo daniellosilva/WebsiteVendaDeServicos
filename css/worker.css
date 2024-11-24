@@ -1,0 +1,49 @@
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #cae8f850;
+    height: 1000px;
+}
+
+section img{
+    border-radius: 20px;
+    
+}
+
+section div{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    height: 400px;
+    gap: 50px;
+}
+.section-1-worker .text-worker{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    gap: 10px;
+}
+
+
+.section-1-worker p{
+    text-align: center;
+    font-size: 20px;
+}
+
+.section-1-worker .botao-orcamento {
+    width: 200px;
+    justify-content: center;
+    height: 100px;
+    border-radius: 50px;
+}
+
+.section-1-worker .botao-orcamento a {
+    color: #FFFFFF;
+    text-decoration: none;
+    background-color: #1A4E69;
+    border-radius: 20px;
+    padding: 20px;
+}
