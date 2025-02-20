@@ -1,0 +1,15 @@
+[
+    {
+      "id": 1,
+      "nome": "Chaveiro 24h",
+      "descricao": "Serviço de chaveiro emergencial a qualquer hora do dia.",
+      "preco": "R$ 100"
+    },
+    {
+      "id": 2,
+      "nome": "Eletricista",
+      "descricao": "Reparo e instalação elétrica.",
+      "preco": "R$ 150"
+    }
+  ]
+  
