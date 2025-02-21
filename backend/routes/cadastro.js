@@ -1,55 +1,35 @@
-const fs = require('fs');
-const path = require('path');
-
-// Função para ler e escrever JSON
-const readJSON = (filePath) => {
-  return new Promise((resolve, reject) => {
-    fs.readFile(filePath, 'utf8', (err, data) => {
-      if (err) reject(err);
-      else resolve(JSON.parse(data));
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form");
+  
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();  // Impede o envio do formulário padrão
+    
+    const formData = new FormData(form);
+    const usuario = {};
+    
+    formData.forEach((value, key) => {
+      usuario[key] = value;
     });
-  });
-};
-
-const writeJSON = (filePath, data) => {
-  return new Promise((resolve, reject) => {
-    fs.writeFile(filePath, JSON.stringify(data, null, 2), (err) => {
-      if (err) reject(err);
-      else resolve();
-    });
-  });
-};
-
-// Rota para registrar usuário
-if (req.url === '/api/cadastro' && req.method === 'POST') {
-  let body = '';
-  req.on('data', chunk => {
-    body += chunk.toString();
-  });
-
-  req.on('end', async () => {
-    const novoUsuario = JSON.parse(body);
-
+    
     try {
-      const usuarios = await readJSON(path.join(__dirname, 'data', 'usuarios.json'));
+      const response = await fetch('http://localhost:5000/api/cadastro', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(usuario)
+      });
+
+      const data = await response.json();
       
-      // Verifica se o usuário já existe
-      const usuarioExistente = usuarios.find(u => u.email === novoUsuario.email);
-      if (usuarioExistente) {
-        res.writeHead(400, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ error: 'Usuário já cadastrado' }));
-        return;
+      if (response.status === 201) {
+        alert(data.message);  // Usuário cadastrado com sucesso
+        window.location.href = 'login.html';  // Redireciona para a página de login
+      } else {
+        alert(data.error);  // Exibe o erro
       }
-
-      // Adiciona o novo usuário e salva o arquivo
-      usuarios.push(novoUsuario);
-      await writeJSON(path.join(__dirname, 'data', 'usuarios.json'), usuarios);
-
-      res.writeHead(201, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ message: 'Usuário cadastrado com sucesso' }));
     } catch (err) {
-      res.writeHead(500, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ error: 'Erro ao cadastrar usuário' }));
+      alert("Erro ao enviar dados. Tente novamente.");
     }
   });
-}
+});
