@@ -1,31 +1,39 @@
-
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const readJSON = (filePath) => {
-  return new Promise((resolve, reject) => {
-    fs.readFile(filePath, 'utf8', (err, data) => {
-      if (err) reject(err);
-      else resolve(JSON.parse(data));
-    });
-  });
-};
-
 const server = http.createServer(async (req, res) => {
+  if (req.url === '/api/cadastro' && req.method === 'POST') {
+    let body = '';
+    req.on('data', chunk => {
+      body += chunk.toString();
+    });
 
-  if (req.url === '/api/servicos' && req.method === 'GET') {
-    try {
-      const servicos = await readJSON(path.join(__dirname, 'data', 'servicos.json'));
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify(servicos));
-    } catch (err) {
-      res.writeHead(500, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ error: 'Erro ao carregar serviços' }));
-    }
-  } 
+    req.on('end', async () => {
+      const novoUsuario = JSON.parse(body);
 
-  else {
+      try {
+        const usuariosPath = path.join(__dirname, 'data', 'usuarios.json');
+        const usuarios = JSON.parse(fs.readFileSync(usuariosPath, 'utf8'));
+        
+        const usuarioExistente = usuarios.find(u => u.email === novoUsuario.email);
+        if (usuarioExistente) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Usuário já cadastrado' }));
+          return;
+        }
+
+        usuarios.push(novoUsuario);
+        fs.writeFileSync(usuariosPath, JSON.stringify(usuarios, null, 2));
+
+        res.writeHead(201, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ message: 'Usuário cadastrado com sucesso' }));
+      } catch (err) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: 'Erro ao cadastrar usuário' }));
+      }
+    });
+  } else {
     res.writeHead(404, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({ error: 'Rota não encontrada' }));
   }
