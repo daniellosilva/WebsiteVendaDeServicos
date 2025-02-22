@@ -4,8 +4,7 @@ const path = require('path');
 
 // Importar rotas
 const servicosRoutes = require('./routes/servicos');
-const contatoRoutes = require('./routes/contato');
-const cadastroRoutes = require('./routes/cadastro');
+const { listarUsuarios, cadastrarUsuario } = require('./routes/cadastro');
 
 const PORT = 5000;
 const publicDir = path.join(__dirname, 'public');
@@ -29,7 +28,9 @@ const server = http.createServer((req, res) => {
   } else if (req.url === '/api/contato' && req.method === 'POST') {
     contatoRoutes.receberMensagem(req, res);
   } else if (req.url === '/api/cadastro' && req.method === 'POST') {
-    cadastroRoutes.cadastrarUsuario(req, res);
+    cadastrarUsuario(req, res);
+  } else if (req.url === '/api/cadastro' && req.method === 'GET') {
+    listarUsuarios(req, res);
   } else if (req.url.endsWith('.css')) {
     const filePath = path.join(publicDir, req.url);
     fs.readFile(filePath, 'utf8', (err, data) => {
