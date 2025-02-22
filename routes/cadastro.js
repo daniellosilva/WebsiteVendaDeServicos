@@ -14,7 +14,7 @@ function cadastrarUsuario(req, res) {
     const { nome, email, senha } = JSON.parse(body);
 
     // Validação básica
-    if (!nome || !email || !senha) {
+    if (!nome || !sobrenome || !email || !senha ) {
       res.writeHead(400, { 'Content-Type': 'application/json' });
       return res.end(JSON.stringify({ error: 'Todos os campos são obrigatórios' }));
     }
@@ -33,6 +33,7 @@ function cadastrarUsuario(req, res) {
     const novoUsuario = {
       id: usuarios.length + 1,
       nome,
+      sobrenome,
       email,
       senha: senhaHash,
     };
