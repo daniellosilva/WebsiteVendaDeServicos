@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
+    
     <header class="header-cadastro">
         <div class="logo">
             <a href="index.html"><img src="img/Marido_de_Aluguel-removebg-preview.png" alt="logo-login" width="200px" height="200px"></a>
@@ -25,30 +26,33 @@
                     <h2>Comece sua <strong>conta agora!</strong></h2>
                     <span>Você está a um passo de criar sua conta no Middo!</span>
                     <div class="cadastro-form"> 
-                        <form action="http://localhost:5000/api/cadastro" method="post">
+                        <form id="form-cadastro" action="http://localhost:5000/api/cadastro" method="post">
                             <div>
                                 <label class="FormLabel">E-mail ou usuário</label>
                                 <input type="text" class="InputText-input" placeholder="Insira o nome do seu usuário ou e-mail de acesso" required>
                             </div>
                             <div>
                                 <label class="FormLabel">Nome</label>
-                                <input type="text" class="InputText-input" placeholder="Insira seu nome" required>
+                                <input type="text" id="nome" class="InputText-input" placeholder="Insira seu nome" required>
                             </div>
                             <div>
                                 <label class="FormLabel">Sobrenome</label>
-                                <input type="text" class="InputText-input" placeholder="Insira seu sobrenome" required>
+                                <input type="text" id="sobrenome" class="InputText-input" placeholder="Insira seu sobrenome" required>
                             </div>
                             <div>
                                 <label class="FormLabel">Digite uma senha</label>
-                                <input type="password" class="InputText-input" placeholder="Insira sua senha" required>
+                                <input type="password" id="senha" class="InputText-input" placeholder="Insira sua senha" required>
                             </div>
                             <div>
                                 <label class="FormLabel">Repita a senha</label>
-                                <input type="password" class="InputText-input" placeholder="Insira sua senha" required>
+                                <input type="password" id="senha2" class="InputText-input" placeholder="Insira sua senha" required>
                             </div>
                             <button class="botao-criar" type="submit">Criar</button>
                         </form>
                 </div>
-            </section>
+                <div id="mensagem"></div>
+            </div>
+        </div>
+ 
 </body>
 </html>
