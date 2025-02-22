@@ -6,4 +6,5 @@ const dbPromise = open({
     driver: sqlite3.Database
 })
 
+
 export const db = await dbPromise
