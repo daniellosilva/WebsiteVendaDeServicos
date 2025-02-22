@@ -3,7 +3,7 @@ const path = require('path');
 const crypto = require('crypto');
 const querystring = require('querystring');
 
-const dataDir = path.join(__dirname, '../data');
+const dataDir = path.join(__dirname, '../database');
 const usuariosPath = path.join(dataDir, 'usuarios.json');
 
 // Verifica se a pasta existe; se não, cria
@@ -35,7 +35,7 @@ function listarUsuarios(req, res) {
 // Função para cadastrar usuário (POST /api/cadastro)
 function cadastrarUsuario(req, res) {
   let body = '';
-  req.on('data', chunk => {
+  req.on('database', chunk => {
     body += chunk.toString();
   });
 
