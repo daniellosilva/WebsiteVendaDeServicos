@@ -6,9 +6,7 @@ import {db} from './db.js'
         nome TEXT,
         img TEXT,
         descricao TEXT,
-        descricao TEXT,
         avaliacao TEXT,
-        valor REAL
         )     
     `);
 }

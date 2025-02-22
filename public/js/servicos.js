@@ -18,6 +18,7 @@ function renderizaServicos(){
         const servico = document.createElement("div"); // Tem que dar uma olhada
         const img = document.createElement("img");
         const nome = document.createElement("p"); // Tem que dar uma olhada nesse "p"
+        
         const descricao = document.createElement("p");
         const avaliacao = document.createElement("p");
         const valor = document.createElement("p");

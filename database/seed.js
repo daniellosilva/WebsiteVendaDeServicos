@@ -3,87 +3,77 @@ import { db } from "./db.js"
 const servicos = [
     {
         id: "servico-0",
-        img: "",
+        img: "../img/chaveiro.png",
         nome: "Chaveiro",
         descricao: "",
         avaliacao: "",
-        valor: "",
     },
     {
         id: "servico-1",
-        img: "",
+        img: "../img/dicas-para-trocar-o-soquete-de-lampada.png",
         nome: "Eletricista",
         descricao: "",
         avaliacao: "",
-        valor: "",
     },
     {
         id: "servico-2",
-        img: "",
+        img: "../img/suprematec-desentupidora-servico-encanador-profissional-1.png",
         nome: "Encanador",
         descricao: "",
         avaliacao: "",
-        valor: "",
     },
     {
         id: "servico-3",
-        img: "",
+        img: "../img/2020-06-10-instalacao-de-grama-sintetica-na-terra (1).png",
         nome: "Jardineiro",
         descricao: "",
         avaliacao: "",
-        valor: "",
     },
     {
         id: "servico-4",
-        img: "",
+        img: "../img/marceneiro.png",
         nome: "Marceneiro",
         descricao: "",
         avaliacao: "",
-        valor: "",
     },
     {
         id: "servico-5",
-        img: "",
+        img: "../img/pedreiro.png",
         nome: "Pedreiro",
         descricao: "",
         avaliacao: "",
-        valor: "",
     },
     {
         id: "servico-6",
-        img: "",
+        img: "../img/pintor.png",
         nome: "Pintor",
         descricao: "",
         avaliacao: "",
-        valor: "",
     },
     {
         id: "servico-7",
-        img: "",
+        img: "../img/piscineiro.png",
         nome: "Piscineiro",
         descricao: "",
         avaliacao: "",
-        valor: "",
     },
     {
         id: "servico-8",
-        img: "",
+        img: "../img/vidraceiro.png",
         nome: "Vidraceiro",
         descricao: "",
         avaliacao: "",
-        valor: "",
     },
 ];
 
 for (let x = 0; x <servicos.length; x++) {
     await db.run(`
-        INSERT INTO servicos (id, img, nome, descricao, avaliacao, valor) VALUES(?,?,?,?,?,?)
+        INSERT INTO servicos (id, img, nome, descricao, avaliacao) VALUES(?,?,?,?,?)
     `,[
         servicos[x].id, 
         servicos[x].img, 
         servicos[x].nome, 
         servicos[x].descricao, 
-        servicos[x].avaliacao, 
-        servicos[x].valor]
+        servicos[x].avaliacao]
     )
 }
