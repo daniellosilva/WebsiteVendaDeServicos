@@ -1,15 +1,13 @@
-import {db} from './db.js'
+import { db } from './db.js';
 
- async function criarTabelas() {
+async function criarTabelas() {
     await db.run(`CREATE TABLE IF NOT EXISTS servicos (
         id TEXT PRIMARY KEY,
         nome TEXT,
         img TEXT,
         descricao TEXT,
-        avaliacao TEXT,
-        )     
-    `);
+        avaliacao TEXT
+    );`);
 }
 
-criarTabelas().then(
-    () => console.log("Tabela criada"));
+criarTabelas().then(() => console.log("Tabela criada"));
