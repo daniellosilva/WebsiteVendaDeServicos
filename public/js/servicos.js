@@ -13,44 +13,48 @@ async function main(){
 }
 
 function renderizaServicos(){
-    const servicos = document.getElementsByClassName("servicos"[0]);
-    for (let x = 0; x < servicos.length;x++){ // Talvez dê erro por causa do "servicos" que se repete 
-        const servico = document.createElement("div"); // Tem que dar uma olhada
-        const img = document.createElement("img");
-        const nome = document.createElement("p"); // Tem que dar uma olhada nesse "p"
-        
-        const descricao = document.createElement("p");
-        const avaliacao = document.createElement("p");
-        const valor = document.createElement("p");
+    const servicosContainer = document.getElementsByClassName("servicos")[0];
+    if (servicosContainer) {
+        for (let x = 0; x < servicos.length; x++) {
+            const servico = document.createElement("div");
+            servico.classList.add("servico");
+    
+            const img = document.createElement("img");
+            const nome = document.createElement("p");
+            const descricao = document.createElement("p");
+            const avaliacao = document.createElement("p");
+            const button = document.createElement("button");
+    
+            servico.id = servicos[x].id;
+            img.src = servicos[x].img;
+            nome.textContent = servicos[x].nome;
+            descricao.textContent = servicos[x].descricao;
+            avaliacao.textContent = `Avaliação: ${servicos[x].avaliacao}`;
+            button.textContent = "Contratar Serviço";
 
-        const button = document.createElement("button"); // Recurso novo, botão de contato do serviço
+            button.addEventListener("click", botaoContratarServico);
 
-        
-        servico.id = servicos[x].id; // acredito que vá puxar o serviço.id da lista de serviços
+            servico.appendChild(img);
+            servico.appendChild(nome);
+            servico.appendChild(descricao);
+            servico.appendChild(avaliacao);
+            servico.appendChild(button);
 
-        img.src = servicos[x].img;
-        nome.textContent = servicos[x].nome;
-        descricao.textContent = servicos[x].descricao;
-        avaliacao.textContent = `Avaliação: ${servicos[x].avaliacao}`;
-        valor.textContent = `R$ ${servicos[x].valor}`;
+    
+            servicosContainer.appendChild(servico);
 
-        button.textContent = "Contratar Serviço";
 
-        button.addEventListener("click", botaoContratarServico);
-
-        servico.appendChild(img);
-        servico.appendChild(nome);
-        servico.appendChild(descricao);
-        servico.appendChild(avaliacao);
-        servico.appendChild(valor);
-        servico.appendChild(button);
-
-        servicos.appendChild(servico);
+        }
     }
 }
 
-function botaoContratarServico(evento){
-    //uma função que redirecione para o whatsapp
+function botaoContratarServico(evento) {
+    const idServico = evento.target.parentElement.id;
+    const servico = obterServicoPorId(idServico);
+    if (servico) {
+        const mensagem = encodeURIComponent(`Olá, quero contratar o serviço de ${servico.nome}.`);
+        window.open(`https://wa.me/5599999999999?text=${mensagem}`, "_blank");
+    }
 }
 
 function obterServicoPorId(id){
