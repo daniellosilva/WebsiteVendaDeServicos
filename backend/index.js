@@ -1,11 +1,15 @@
 const express = require('express');
 const path = require('path');
 const cadastroRouter = require('./routes/cadastro');
+const servicosRouter = require('./routes/servicos'); // Usando require
 
 const app = express();
 
 // Middleware para processar JSON
 app.use(express.json());
+
+// Usa as rotas de serviços
+app.use('/api', servicosRouter);
 
 // Configura o Express para servir arquivos estáticos da pasta "public"
 app.use(express.static(path.join(__dirname, '../public')));
