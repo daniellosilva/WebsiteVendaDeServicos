@@ -4,7 +4,7 @@ let servicos = [];
 
 async function main(){
 
-    const response = await fetch("http://localhost:55555/api/servicos")
+    const response = await fetch("http://localhost:5000/api/servicos")
     const dado = await response.json()
     servicos = dado
     renderizaServicos()
