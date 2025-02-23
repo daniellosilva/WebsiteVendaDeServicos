@@ -2,7 +2,7 @@ import express from 'express';
 import path from 'path';
 import cors from 'cors';
 import { fileURLToPath } from 'url';
-import router from './routes/cadastro.js';
+import routerCadastro from './routes/cadastro.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -21,7 +21,7 @@ app.get('/cadastro.html', (req, res) => {
 });
 
 // Usa as rotas definidas em cadastroRouter
-app.use(router);
+app.use(routerCadastro);
 
 const PORT = 5000;
 app.listen(PORT, () => {

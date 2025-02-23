@@ -2,12 +2,13 @@ document.getElementById('form-cadastro').addEventListener('submit', function (ev
     event.preventDefault(); // Impede o envio padrão do formulário
   
     // Captura os valores dos campos
-    const nome = document.getElementById('nome').value;
-    const sobrenome = document.getElementById('sobrenome').value;
+    const nome = document.getElementById('nome').value.trim;
+    const sobrenome = document.getElementById('sobrenome').value.trim;
     const email = document.getElementById('email').value;
-    const senha = document.getElementById('senha').value;
-    const senha2 = document.getElementById('senha2').value;
-  
+    const senha = document.getElementById('senha').value.trim;
+    const senha2 = document.getElementById('senha2').value.trim;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
     // Validação básica no frontend
     if (!nome || !sobrenome || !email || !senha || !senha2) {
       alert('Todos os campos são obrigatórios.');
@@ -15,7 +16,6 @@ document.getElementById('form-cadastro').addEventListener('submit', function (ev
     }
   
     // Validação de e-mail
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       alert('Por favor, insira um e-mail válido.');
       return;
@@ -28,23 +28,25 @@ document.getElementById('form-cadastro').addEventListener('submit', function (ev
     }
   
     // Envia os dados para o backend
-    fetch('/api/cadastro', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ nome, sobrenome, email, senha }),
-    })
-      .then(response => response.json())
-      .then(data => {
-        if (data.error) {
-          alert(data.error); // Exibe mensagem de erro
-        } else {
-          alert('Usuário cadastrado com sucesso!'); // Exibe mensagem de sucesso
-        }
+      fetch('/api/cadastro', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ nome, sobrenome, email, senha }),
       })
-      .catch(error => {
-        console.error('Erro:', error);
-        alert('Ocorreu um erro ao cadastrar o usuário. Tente novamente.');
-      });
+        .then(response => {
+          if (!response.ok) {
+            alert('Error')
+            throw new Error(`Erro: ${response.statusText}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log('Usuário cadastrado com sucesso:', data);
+        })
+        .catch(error => {
+          console.error('Erro ao cadastrar usuário:', error);
+        });
+      
   });

@@ -20,12 +20,9 @@
   "homepage": "https://github.com/daniellosilva/WebsiteVendaDeServicos#readme",
   "description": "",
   "dependencies": {
-<<<<<<< HEAD
-    "express": "^4.21.2"
-=======
+    "cors": "^2.8.5",
     "express": "^4.21.2",
     "sqlite": "^5.1.1",
     "sqlite3": "^5.1.7"
->>>>>>> 7ee65d96fadff01d7707336392b0b656aeb06174
   }
 }

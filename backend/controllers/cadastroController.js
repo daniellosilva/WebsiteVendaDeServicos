@@ -1,7 +1,7 @@
-import fs from 'fs';  // Importando fs corretamente
+import fs from 'fs';  
 import path from 'path';
 import crypto from 'crypto';
-import querystring from 'querystring'; // Para decodificar application/x-www-form-urlencoded
+import querystring from 'querystring'; 
 
 import { fileURLToPath } from 'url';
 
