@@ -1,7 +1,13 @@
-const fs = require('fs');
-const path = require('path');
-const crypto = require('crypto');
-const querystring = require('querystring'); // Para decodificar application/x-www-form-urlencoded
+import fs from 'fs';  // Importando fs corretamente
+import path from 'path';
+import crypto from 'crypto';
+import querystring from 'querystring'; // Para decodificar application/x-www-form-urlencoded
+
+import { fileURLToPath } from 'url';
+
+// Cria o __dirname em ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const dataDir = path.join(__dirname, '../database');
 const usuariosPath = path.join(dataDir, 'usuarios.json');
@@ -105,4 +111,4 @@ const usuarioController = {
   },
 };
 
-module.exports = usuarioController;
+export default usuarioController;
