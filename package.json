@@ -17,5 +17,8 @@
     "url": "https://github.com/daniellosilva/WebsiteVendaDeServicos/issues"
   },
   "homepage": "https://github.com/daniellosilva/WebsiteVendaDeServicos#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
