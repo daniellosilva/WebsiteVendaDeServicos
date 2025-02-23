@@ -70,6 +70,15 @@
     align-items: center;
 }
 
+.modal h2{
+    margin: 10px;
+}
+
+.modal p{
+    margin: 10px;
+}
+
+
 .modal-content {
     background-color: #fff;
     padding: 20px;

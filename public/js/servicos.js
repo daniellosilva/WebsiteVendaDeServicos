@@ -68,7 +68,7 @@ function abrirModal(servico) {
     // Botão de contato
     document.getElementById("modal-contratar").onclick = () => {
         const mensagem = `Olá, gostaria de contratar o serviço de ${servico.nome}!`;
-        const numeroWhatsApp = "558899999999";
+        const numeroWhatsApp = "5587996282004";
         const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
         window.open(url, "_blank");
     };
