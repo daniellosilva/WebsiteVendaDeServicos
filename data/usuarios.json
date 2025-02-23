@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "nome": "Daniel",
+    "sobrenome": "Oliveira",
+    "email": "daniel@gmail.com",
+    "senha": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"
+  },
+  {
+    "id": 2,
+    "nome": "Kauan",
+    "sobrenome": "Ferreira",
+    "email": "Kauan@gmail.com",
+    "senha": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"
+  },
+  {
+    "id": 3,
+    "nome": "Kauan",
+    "sobrenome": "Ferreira",
+    "email": "Kauan2@gmail.com",
+    "senha": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"
+  },
+  {
+    "id": 4,
+    "nome": "Kauan",
+    "sobrenome": "Ferreira",
+    "email": "Kauan",
+    "senha": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"
+  }
+]
