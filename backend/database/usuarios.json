@@ -113,5 +113,12 @@
     "sobrenome": "India",
     "email": "Indiano@gmail.com",
     "senha": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"
+  },
+  {
+    "id": 18,
+    "nome": "Kauan",
+    "sobrenome": "Danadinho",
+    "email": "kauancavalcante@gmail.com",
+    "senha": "610504df87f591db2a49dc41ccc75ed994632b77f8bbe70ad69d1c12307d5e42"
   }
 ]
