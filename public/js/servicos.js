@@ -12,51 +12,50 @@ async function main(){
     console.log("Renderizando...")
 }
 
-function renderizaServicos(){
-    const servicos = document.getElementsByClassName("servicos"[0]);
-    for (let x = 0; x < servicos.length;x++){ // Talvez dê erro por causa do "servicos" que se repete 
-        const servico = document.createElement("div"); // Tem que dar uma olhada
+function renderizaServicos() {
+    const containerServicos = document.getElementsByClassName("section-1-servicos")[0];
+    containerServicos.innerHTML = ""; // Limpa o conteúdo antes de renderizar
+
+    for (let x = 0; x < servicos.length; x++) {
+        const servico = document.createElement("div");
+        servico.className = "servico-item";
+
         const img = document.createElement("img");
-        const nome = document.createElement("p"); // Tem que dar uma olhada nesse "p"
-        
+        const nome = document.createElement("p");
         const descricao = document.createElement("p");
         const avaliacao = document.createElement("p");
+        const button = document.createElement("button");
 
-        //const button = document.createElement("button"); // Recurso novo, botão de contato do serviço
-
-        
-        servico.id = servicos[x].id; // acredito que vá puxar o serviço.id da lista de serviços
-
+        // Preencher os dados
+        servico.id = servicos[x].id;
         img.src = servicos[x].img;
+        img.alt = servicos[x].nome;
         nome.textContent = servicos[x].nome;
         descricao.textContent = servicos[x].descricao;
-        avaliacao.textContent = Avaliação: ${servicos[x].avaliacao};
-        //valor.textContent = R$ ${servicos[x].valor};
+        avaliacao.textContent = `Avaliação: ${servicos[x].avaliacao}`;
+        button.textContent = "Contratar Serviço";
 
-        //button.textContent = "Contratar Serviço";
+        // Adicionar evento no botão
+        button.addEventListener("click", () => botaoContratarServico(servicos[x].id));
 
-        //button.addEventListener("click", botaoContratarServico);
-
+        // Montar a estrutura
         servico.appendChild(img);
         servico.appendChild(nome);
         servico.appendChild(descricao);
         servico.appendChild(avaliacao);
-       // servico.appendChild(valor);
-        //servico.appendChild(button);
+        servico.appendChild(button);
 
-        servicos.appendChild(servico);
+        // Adicionar o serviço ao container
+        containerServicos.appendChild(servico);
     }
 }
 
-function botaoContratarServico(evento){
-    //uma função que redirecione para o whatsapp
-}
-
-function obterServicoPorId(id){
-    for (let servico of servicos){
-        if(servico.id === id){
-            return servico;
-        }
+function botaoContratarServico(id) {
+    const servicoSelecionado = obterServicoPorId(id);
+    if (servicoSelecionado) {
+        const mensagem = `Olá, gostaria de contratar o serviço de ${servicoSelecionado.nome}!`;
+        const numeroWhatsApp = "558899999999"; // Troque pelo número real
+        const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+        window.open(url, "_blank");
     }
-    return null;
 }
