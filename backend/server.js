@@ -3,7 +3,6 @@ import path from 'path';
 import cors from 'cors';
 import { fileURLToPath } from 'url';
 import routerCadastro from './routes/cadastro.js';
-import { obterServicos } from './controllers/servicos.controllers.js';
 import servicosRouter from './routes/servicos.js';
 
 const __filename = fileURLToPath(import.meta.url);

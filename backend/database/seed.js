@@ -75,5 +75,5 @@ for (let x = 0; x <servicos.length; x++) {
         servicos[x].nome, 
         servicos[x].descricao, 
         servicos[x].avaliacao]
-    )
+    )   
 }
