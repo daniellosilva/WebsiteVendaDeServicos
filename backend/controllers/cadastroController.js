@@ -66,12 +66,6 @@ const usuarioController = {
 
         const { nome, sobrenome, email, senha } = dados;
 
-        // Validação básica
-        if (!nome || !sobrenome || !email || !senha) {
-          res.writeHead(400, { 'Content-Type': 'application/json' });
-          return res.end(JSON.stringify({ error: 'Todos os campos são obrigatórios.' }));
-        }
-
         // Verificar se o e-mail já está cadastrado
         const usuarios = JSON.parse(fs.readFileSync(usuariosPath, 'utf8'));
         const usuarioExistente = usuarios.find(u => u.email === email);
