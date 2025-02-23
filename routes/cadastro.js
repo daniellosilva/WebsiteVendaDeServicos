@@ -59,6 +59,48 @@ function cadastrarUsuario(req, res) {
 
       const { nome, sobrenome, email, senha } = dados;
 
-      
+      // Validação básica
+      if (!nome || !sobrenome || !email || !senha) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ error: 'Todos os campos são obrigatórios.' }));
+      }
+
+      // Verificar se o e-mail já está cadastrado
+      const usuarios = JSON.parse(fs.readFileSync(usuariosPath, 'utf8'));
+      const usuarioExistente = usuarios.find(u => u.email === email);
+
+      if (usuarioExistente) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ error: 'E-mail já cadastrado.' }));
+      }
+
+      // Gerar hash da senha
+      const senhaHash = crypto.createHash('sha256').update(senha).digest('hex');
+
+      // Criar novo usuário
+      const novoUsuario = {
+        id: usuarios.length + 1,
+        nome,
+        sobrenome,
+        email,
+        senha: senhaHash,
+      };
+
+      // Adicionar o novo usuário ao array
+      usuarios.push(novoUsuario);
+
+      // Salvar o array atualizado no arquivo
+      fs.writeFileSync(usuariosPath, JSON.stringify(usuarios, null, 2));
+
+      // Resposta de sucesso
+      res.writeHead(201, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ message: 'Usuário cadastrado com sucesso!', usuario: novoUsuario }));
+    } catch (err) {
+      console.error('Erro ao cadastrar usuário:', err);
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'Erro interno no servidor.' }));
+    }
+  });
+}
 
 module.exports = { listarUsuarios, cadastrarUsuario };
