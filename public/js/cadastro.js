@@ -28,7 +28,7 @@ document.getElementById('form-cadastro').addEventListener('submit', function (ev
     }
   
     // Envia os dados para o backend
-      fetch('/api/cadastro', {
+      fetch('http://localhost:5000/api/cadastro', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
