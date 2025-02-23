@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const servicosPath = path.join(__dirname, '../data', 'servicos.json');
+const servicosPath = path.join(__dirname, '../js', 'seed.js');
 
 function listarServicos(req, res) {
   fs.readFile(servicosPath, 'utf8', (err, data) => {
