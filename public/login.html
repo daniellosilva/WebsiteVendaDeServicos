@@ -20,19 +20,20 @@
             <a href="index.html"><img src="img/Marido_de_Aluguel-removebg-preview.png" alt="logo-login" width="200px" height="200px"></a>
             <div class="login-form">
                 <h1>Acesse sua conta</h1>
-                <form action="sobre.html" method="post">
+                <form id="form-login" action="http://localhost:5000/api/login" method="post">
                     <div>
                         <label class="FormLabel">E-mail ou usuário</label>
-                        <input type="text" class="InputText-input" placeholder="Insira o nome do seu usuário ou e-mail de acesso" required>
+                        <input id="email" type="text" class="InputText-input" placeholder="Insira seu e-mail de acesso">
                     </div>
                     <div>
                         <label class="FormLabel">Senha</label>
-                        <input type="password" class="InputText-input" placeholder="Insira sua senha" required>
+                        <input id="senha"type="password" class="InputText-input" placeholder="Insira sua senha">
                     </div>
                     <button class="botao-entrar" type="submit">Entrar</button>
                 </form>
             </div>
             <a href="cadastro.html">Ainda não tem cadastro?</a>
         </div>
+        <script src="js/login.js"></script>
     </section>
 </body>

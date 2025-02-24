@@ -5,6 +5,8 @@ import { fileURLToPath } from 'url';
 
 import servicosRouter from './routes/servicos.js';
 import routerCadastro from './routes/cadastro.js';
+import loginController from './controllers/loginController.js';
+import routerLogin from './routes/login.js';
 
 // Obter o caminho do diretório atual
 const filename = fileURLToPath(import.meta.url);
@@ -29,6 +31,7 @@ app.get('/cadastro.html', (req, res) => {
 // Usa as rotas definidas em routerCadastro e servicosRouter
 app.use('/api/cadastro', routerCadastro);
 app.use('/api/servicos', servicosRouter);
+app.use('/api/login', routerLogin);
 
 const PORT = 5000;
 app.listen(PORT, () => {

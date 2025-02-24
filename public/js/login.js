@@ -2,8 +2,8 @@ document.getElementById('form-login').addEventListener('submit', function (event
     event.preventDefault(); // Impede o envio padrão do formulário
 
     // Captura os valores dos campos
-    const email = document.getElementById('email').value;
-    const senha = document.getElementById('senha').value;
+    const email = document.getElementById('email').value.trim();
+    const senha = document.getElementById('senha').value.trim();
 
     // Validação básica no frontend
     if (!email || !senha) {
@@ -20,23 +20,27 @@ document.getElementById('form-login').addEventListener('submit', function (event
 
     // Envia os dados para o backend
     fetch('/api/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, senha }),
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({email, senha}),
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.error) {
-            alert(data.error); // Exibe mensagem de erro
-        } else {
-            alert('Login realizado com sucesso!'); // Exibe mensagem de sucesso
-            window.location.href = '/dashboard'; // Redireciona para a página principal
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Erro na requisição: ' + response.statusText);
         }
-    })
-    .catch(error => {
+        return response.json();
+      })
+      .then(data => {
+        if (data.error) {
+          alert(data.error); // Exibe mensagem de erro
+        } else {
+          alert('Usuário logado com sucesso!'); // Exibe mensagem de sucesso
+        }
+      })
+      .catch(error => {
         console.error('Erro:', error);
-        alert('Ocorreu um erro ao realizar o login. Tente novamente.');
-    });
-});
+        alert('Ocorreu um erro ao logar o usuário. Tente novamente.');
+      });
+  });
