@@ -5,12 +5,14 @@ import { fileURLToPath } from 'url';
 
 import servicosRouter from './routes/servicos.js';
 import routerCadastro from './routes/cadastro.js';
-import loginController from './controllers/loginController.js';
 import routerLogin from './routes/login.js';
 
 // Obter o caminho do diretório atual
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
+
+// Caminho absoluto para o banco de dados
+const dbPath = path.resolve(dirname, '../database/database.db');
 
 const app = express();
 
@@ -28,7 +30,7 @@ app.get('/cadastro.html', (req, res) => {
   res.sendFile(path.join(dirname, '../public/cadastro.html'));
 });
 
-// Usa as rotas definidas em routerCadastro e servicosRouter
+// Usa as rotas definidas em routerCadastro, servicosRouter e routerLogin
 app.use('/api/cadastro', routerCadastro);
 app.use('/api/servicos', servicosRouter);
 app.use('/api/login', routerLogin);
