@@ -3,18 +3,15 @@ import { open } from 'sqlite';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Resolve o caminho absoluto para o banco de dados
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const dbPath = path.resolve(__dirname, '../database/database.db'); // Caminho absoluto
+const dbPath = path.resolve(__dirname, '../database/database.db'); 
 
-// Abre a conexão com o banco de dados
 export const db = await open({
-  filename: dbPath, // Usa o caminho absoluto
+  filename: dbPath, 
   driver: sqlite3.Database,
 });
 
-// Verifica se a tabela de usuários existe; se não, cria
 await db.exec(`
   CREATE TABLE IF NOT EXISTS usuarios (
     id INTEGER PRIMARY KEY AUTOINCREMENT,

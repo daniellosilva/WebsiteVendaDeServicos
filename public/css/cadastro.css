@@ -53,8 +53,6 @@ section .cadastro-posicao {
   height: 100%;
 }
 
-
-
 section .cadastro-form form {
   display: flex;
   align-items: center;
@@ -131,4 +129,17 @@ section button:hover{
   color: #fff;
   border-radius: 10px;
   transition: 0.5s;
+}
+
+#cadastro-sucesso {
+  display: none;
+  color: white;
+  font-size: 14px;
+  margin: 10px;
+
+}
+
+section h1 {
+  margin: 10px;
+  align-items: center;
 }

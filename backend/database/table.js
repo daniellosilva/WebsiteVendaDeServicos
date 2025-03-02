@@ -1,6 +1,5 @@
-import { db } from './db.js'; // Importe o banco de dados
+import { db } from './db.js'; 
 
-// Cria a tabela de serviços se ela não existir
 async function criarTabelas() {
   try {
     await db.run(`CREATE TABLE IF NOT EXISTS servicos (
@@ -16,7 +15,6 @@ async function criarTabelas() {
   }
 }
 
-// Cria a tabela de usuários se ela não existir
 async function criarTabelaUsuarios() {
   try {
     await db.run(`CREATE TABLE IF NOT EXISTS usuarios (
@@ -32,7 +30,6 @@ async function criarTabelaUsuarios() {
   }
 }
 
-// Executa as funções para criar as tabelas
 async function inicializarBancoDeDados() {
   await criarTabelas();
   await criarTabelaUsuarios();
